@@ -147,14 +147,14 @@
   .topo nav { display: flex; flex-wrap: wrap; gap: .25rem 1.4rem; }
   .topo nav a { color: var(--prata); text-decoration: none; padding: .6rem 0; font-weight: 400; }
   .topo nav a:hover { text-decoration: underline; }
-  .abertura-grade { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 2rem; align-items: end; }
+  .abertura-grade { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 2rem; align-items: center; }
   .abertura-texto { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.4rem; padding-block: clamp(2rem, 6vw, 5rem); max-width: 34rem; }
   .abertura h1 { font-size: clamp(2.6rem, 1.6rem + 4vw, 4.4rem); color: #fff; }
   .abertura-texto p { font-size: 1.25rem; color: var(--prata); }
   .abertura-acoes { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .4rem; }
   .abertura-acoes .btn-linha { color: var(--prata); }
   .abertura-acoes .btn-linha:hover { background: var(--grafite-2); }
-  .retrato { justify-self: center; width: min(100%, 360px); margin: 0; }
+  .retrato { justify-self: center; width: min(100%, 430px); margin: 0; margin-block: clamp(2rem, 5vw, 4rem); }
   .retrato img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; }
   .retrato figcaption { background: var(--grafite); color: var(--prata); padding: .7rem 1rem; font-size: .95rem; border-top: 3px solid var(--ouro); }
   .retrato figcaption strong { display: block; font: 600 1.35rem/1.2 var(--serifa); color: #fff; }
@@ -162,7 +162,7 @@
     .abertura::before, .abertura::after { display: none; }
     .abertura-grade { grid-template-columns: minmax(0, 1fr); }
     .abertura-texto { padding-bottom: 0; }
-    .retrato { justify-self: start; width: min(100%, 300px); margin-bottom: 2.5rem; border-left: 3px solid var(--ouro); }
+    .retrato { justify-self: start; width: min(100%, 360px); margin-block: 0 2.5rem; border-left: 3px solid var(--ouro); }
     .topo nav { display: none; }   /* a barra de baixo tem Ligar e WhatsApp */
   }
 
@@ -340,7 +340,7 @@
       </div>
     </div>
     <figure class="retrato">
-      <img src="img/eduardo.webp" width="300" height="375" alt="Dr. Eduardo Chimenes, sorrindo, de camisa azul e gravata, no escritório" fetchpriority="high">
+      <img src="img/eduardo.webp" width="432" height="540" alt="Dr. Eduardo Chimenes, sorrindo, de terno azul e gravata, no escritório" fetchpriority="high">
       <figcaption><strong>Dr. Eduardo Chimenes</strong>Advogado previdenciário. <span class="a-preencher">OAB/SP nº a confirmar</span></figcaption>
     </figure>
   </div>
