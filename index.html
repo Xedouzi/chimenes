@@ -341,7 +341,7 @@
     </div>
     <figure class="retrato">
       <img src="img/eduardo.webp" width="432" height="540" alt="Dr. Eduardo Chimenes, sorrindo, de terno azul e gravata, no escritório" fetchpriority="high">
-      <figcaption><strong>Dr. Eduardo Chimenes</strong>Advogado previdenciário. <span class="a-preencher">OAB/SP nº a confirmar</span></figcaption>
+      <figcaption><strong>Dr. Eduardo Chimenes</strong>Advogado previdenciário. OAB/SP 243.434</figcaption>
     </figure>
   </div>
 </header>
@@ -452,7 +452,7 @@
         <h2 id="titulo-sobre">Um escritório só de previdenciário</h2>
         <p>O Dr. Eduardo da Silva Chimenes atende em Cravinhos, na Av. Pedro Duarte Amoroso. O escritório trabalha só com o INSS: aposentadorias, auxílios, pensões e revisões.</p>
         <p>Toda semana ele grava um vídeo explicando uma regra do INSS em palavras simples. O mesmo cuidado vale no atendimento: você entende o que está sendo pedido e por quê.</p>
-        <p><span class="a-preencher">Tempo de atuação e OAB a confirmar.</span></p>
+        <p>OAB/SP 243.434. <span class="a-preencher">Tempo de atuação a confirmar.</span></p>
       </div>
     </div>
   </section>
@@ -487,7 +487,7 @@
         <a href="https://www.youtube.com/@eduardochimenes902" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9.2v5.6l4.8-2.8z" fill="currentColor" stroke="none"/></svg>YouTube</a>
         <a href="https://www.facebook.com/eduardochimenesadvogado/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M15.5 8h-1.6c-1 0-1.4.5-1.4 1.4V21M10.5 12.5h5" /></svg>Facebook</a>
       </div>
-      <p>Eduardo Chimenes Sociedade Individual de Advocacia<br>CNPJ 38.056.270/0001-97. <span class="a-preencher">OAB/SP a confirmar</span></p>
+      <p>Eduardo Chimenes Sociedade Individual de Advocacia<br>CNPJ 38.056.270/0001-97. OAB/SP 243.434</p>
     </div>
   </div>
 </footer>
@@ -524,21 +524,22 @@ const ASSUNTOS = { todos: "Todos", aposentadoria: "Aposentadoria", doenca: "Afas
 
 /* guia: situacoes e documentos (a revisar com o Dr. Eduardo) */
 const SITUACOES = {
-  aposentar: { rotulo: "Quero me aposentar ou saber quando posso", resumo: "quer se aposentar ou saber quando pode",
+  aposentar: { rotulo: "Quero me aposentar ou saber quando posso", eu: "quero me aposentar ou saber quando posso", outro: "quer se aposentar ou saber quando pode",
     docs: ["Extrato do CNIS (no Meu INSS)", "Carteiras de trabalho, todas, inclusive as antigas", "Carnês ou guias, se pagou o INSS por conta própria", "Documentos de atividade insalubre ou perigosa, se teve (PPP, laudos)"] },
-  doenca: { rotulo: "Estou doente ou afastado do trabalho", resumo: "está doente ou afastado do trabalho",
+  doenca: { rotulo: "Estou doente ou sem poder trabalhar", eu: "estou doente ou sem poder trabalhar", outro: "está doente ou sem poder trabalhar",
     docs: ["Laudos, exames e receitas recentes", "Atestados com o código da doença (CID)", "Extrato do CNIS (no Meu INSS)", "Carteira de trabalho", "Decisão do INSS, se já pediu o benefício"] },
-  revisar: { rotulo: "Já sou aposentado e acho que o valor está errado", resumo: "já é aposentado e acha que o valor está errado",
+  revisar: { rotulo: "Já recebo aposentadoria e acho que o valor está errado", eu: "já recebo aposentadoria e acho que o valor está errado", outro: "já recebe aposentadoria e acha que o valor está errado",
     docs: ["Carta de concessão da aposentadoria", "Extrato de pagamento do benefício", "Extrato do CNIS (no Meu INSS)", "Carteiras de trabalho"] },
-  pensao: { rotulo: "Perdi alguém da família e quero saber da pensão", resumo: "perdeu alguém da família e quer saber da pensão",
+  pensao: { rotulo: "Perdi alguém da família e quero saber da pensão", eu: "perdi alguém da família e quero saber da pensão", outro: "perdeu alguém da família e quer saber da pensão",
     docs: ["Certidão de óbito", "Certidão de casamento ou provas de união estável", "Documentos pessoais de quem faleceu", "Certidão de nascimento dos filhos menores, se houver"] },
-  negado: { rotulo: "O INSS negou ou cortou meu benefício", resumo: "teve o benefício negado ou cortado pelo INSS",
+  negado: { rotulo: "O INSS negou ou cortou meu benefício", eu: "tive o benefício negado ou cortado pelo INSS", outro: "teve o benefício negado ou cortado pelo INSS",
     docs: ["A carta com a decisão do INSS", "Número do protocolo do pedido", "Todos os documentos que foram enviados no pedido", "Laudos e exames, se for benefício por doença"] },
-  outro: { rotulo: "Outra coisa", resumo: "tem outra dúvida sobre o INSS",
+  outro: { rotulo: "Outra coisa", eu: "tenho outra dúvida sobre o INSS", outro: "tem outra dúvida sobre o INSS",
     docs: ["Extrato do CNIS (no Meu INSS)", "Qualquer carta ou decisão que recebeu do INSS"] },
 };
 const QUEM = { eu: "Sou eu", familiar: "É meu pai, mãe ou outro familiar" };
 const IDADES = { "-50": "Menos de 50 anos", "50-59": "De 50 a 59 anos", "60-64": "De 60 a 64 anos", "65+": "65 anos ou mais" };
+const IDADE_FRASE = { "-50": "menos de 50 anos", "50-59": "entre 50 e 59 anos", "60-64": "entre 60 e 64 anos", "65+": "65 anos ou mais" };
 const BASICOS = ["RG e CPF", "Comprovante de endereço"];
 
 /* ============================================================ */
@@ -568,7 +569,7 @@ function mostrar(focar) {
     const s = SITUACOES[resp.situacao];
     const docs = [...BASICOS, ...s.docs];
     html = `<div class="resumo">
-      <h3>Seu resumo</h3>
+      <h3 tabindex="-1">Seu resumo</h3>
       <dl>
         <div><dt>Situação</dt><dd>${esc(s.rotulo)}</dd></div>
         <div><dt>O caso é de</dt><dd>${resp.quem === "familiar" ? "um familiar" : "você"}</dd></div>
@@ -589,8 +590,11 @@ function mostrar(focar) {
 function atualizarZapGuia() {
   const s = SITUACOES[resp.situacao];
   const temos = [...caixa.querySelectorAll('input[name="doc"]:checked')].map((i) => i.value);
-  const quem = resp.quem === "familiar" ? `Meu familiar (${IDADES[resp.idade].toLowerCase()})` : `Eu (${IDADES[resp.idade].toLowerCase()})`;
-  const texto = `Olá! Respondi o "Qual é a sua situação?" no site.\n\n${quem} ${s.resumo}.` +
+  const idade = IDADE_FRASE[resp.idade];
+  const caso = resp.quem === "familiar"
+    ? `É sobre um familiar (${idade}): ${s.outro}.`
+    : `Tenho ${idade}: ${s.eu}.`;
+  const texto = `Olá! Respondi o "Qual é a sua situação?" no site.\n\n${caso}` +
     (temos.length ? `\n\nJá tenho: ${temos.join("; ")}.` : "") + `\n\nPodemos conversar sobre o caso?`;
   $("#guia-zap").href = zap(texto);
 }
@@ -636,7 +640,8 @@ function montarVideos() {
   const lista = todosVisiveis ? todos : todos.slice(0, POR_VEZ);
   const mais = $("#mais-videos");
   mais.hidden = todos.length <= lista.length;
-  mais.textContent = `Mostrar mais ${todos.length - lista.length} vídeos`;
+  const resto = todos.length - lista.length;
+  mais.textContent = resto === 1 ? "Mostrar mais 1 vídeo" : `Mostrar mais ${resto} vídeos`;
   $("#lista-videos").innerHTML = lista.map((v) => `<li class="video">
     <div class="video-tela">
       <button type="button" data-video="${v.id}" aria-label="Assistir: ${esc(v.titulo)}">
